@@ -38,10 +38,6 @@ A straightforward model that adjusts price in proportion to changes in occupancy
 
 NewPrice_t = PreviousPrice_t + α × (Occupancy_t - PrevOccupancy_t) / (Capacity - PrevOccupancy_t)
 
-yaml
-Copy
-Edit
-
 Where:
 - **α (alpha)** controls the price sensitivity to occupancy change.
 
@@ -69,17 +65,9 @@ This model introduces a more comprehensive demand function incorporating multipl
 
 Demand = α × (Occupancy / Capacity) + β × QueueLength - γ × TrafficCondition + δ × IsSpecialDay + ε × VehicleTypeWeight
 
-csharp
-Copy
-Edit
-
 The price is then computed as:
 
 NewPrice_t = BasePrice × (1 + λ × NormalizedDemand)
-
-yaml
-Copy
-Edit
 
 Where:
 - **λ** is a demand scaling coefficient (set to 0.6).
